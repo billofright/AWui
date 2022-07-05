@@ -1,0 +1,1 @@
+../build-Debug/AWui/app.cpp.o ../build-Debug/AWui/menu.cpp.o
