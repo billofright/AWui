@@ -16,7 +16,11 @@ cApp::~cApp()
 bool cApp::OnInit()
 {
 	m_frame1 = new cMenu();
-	m_frame1 -> Show();
+	m_frame1 -> Center();
+	m_frame1 -> Show(true);
 	
 	return true;
 }
+
+
+
