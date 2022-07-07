@@ -22,15 +22,18 @@ menuPanel::menuPanel(wxWindow* parent):wxPanel(parent)
 
 	}
 	
-	btns1[0] -> SetLabel("panel 1");
-	btns1[1] -> SetLabel("panel 2");
-	btns1[2] -> SetLabel("panel 3");
-	btns1[3] -> SetLabel("panel 4");
+	btns1[0] -> SetLabel("Recipe");
+	btns1[1] -> SetLabel("Process For Engineer");
+	btns1[2] -> SetLabel("Process For Production");
+	btns1[3] -> SetLabel("GEM SECS II Setup");
+	btns1[4] -> SetLabel("Calibration");
 	
-	btns2[0] -> SetLabel("panel 5");
-	btns2[1] -> SetLabel("panel 6");
-	btns2[2] -> SetLabel("panel 7");
-	btns2[3] -> SetLabel("panel 8");
+	btns2[0] -> SetLabel("Exit Demo System");
+	btns2[1] -> SetLabel("Log On Network");
+	btns2[2] -> SetLabel("Online Help and Manual");
+	btns2[3] -> SetLabel("Diagnostics");
+	btns2[4] -> SetLabel("Maintenance");
+
 		
 	boxSizer -> Add(row1, 0, wxEXPAND | wxALL, 10);
 	boxSizer -> Add(panel_middle, 1, wxEXPAND | wxLEFT | wxRIGHT, 10);
