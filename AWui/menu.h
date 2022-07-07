@@ -1,6 +1,7 @@
 #include <wx/wx.h>
 #include "panel1.h"
 #include "menuPanel.h"
+#include "panel2.h"
 
 class cMenu : public wxFrame
 {
@@ -10,8 +11,9 @@ public:
 public:
 	wxBoxSizer* switcher = nullptr;
 
-	panel1* p1 = nullptr;
 	menuPanel *menu_p = nullptr;
+	panel1* p1 = nullptr;
+	panel2* p2 = nullptr;
 	
 	void OnClicked1(wxCommandEvent &evt);
 	void OnClicked2(wxCommandEvent &evt);
@@ -22,6 +24,10 @@ public:
 	void OnClicked6(wxCommandEvent &evt);
 	void OnClicked7(wxCommandEvent &evt);
 	void OnClicked8(wxCommandEvent &evt);
+	
+	void OnClicked9(wxCommandEvent &evt);
+	void OnClicked10(wxCommandEvent &evt);
+
 	
 	wxDECLARE_EVENT_TABLE();
 };

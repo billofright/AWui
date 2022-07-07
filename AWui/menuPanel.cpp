@@ -22,7 +22,8 @@ menuPanel::menuPanel(wxWindow* parent):wxPanel(parent)
 
 	}
 	
-	btns1[0] -> SetLabel("Recipe");
+	btns1[0] -> SetLabel("panel 1");
+	btns1[1] -> SetLabel("panel 2");
 		
 	boxSizer -> Add(row1, 0, wxEXPAND | wxALL, 10);
 	boxSizer -> Add(panel_middle, 1, wxEXPAND | wxLEFT | wxRIGHT, 10);

@@ -90,11 +90,15 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="Panels">
+      <File Name="panel2.h"/>
+      <File Name="panel2.cpp"/>
+      <File Name="panel1.h"/>
+      <File Name="panel1.cpp"/>
+      <File Name="menuPanel.h"/>
+      <File Name="menuPanel.cpp"/>
+    </VirtualDirectory>
     <File Name="menu.h"/>
-    <File Name="menuPanel.h"/>
-    <File Name="menuPanel.cpp"/>
-    <File Name="panel1.h"/>
-    <File Name="panel1.cpp"/>
     <File Name="app.h"/>
     <File Name="app.cpp"/>
     <File Name="menu.cpp"/>
