@@ -28,6 +28,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640,
 	menu_p -> Show();
 	
 	this -> SetSizer(switcher);
+	//test
 	
 }
 
