@@ -14,20 +14,19 @@ EVT_BUTTON(10008, cMenu::OnClicked8)
 wxEND_EVENT_TABLE()
 
 wxPanel* menuPanel;
-wxPanel* panel1;
 
 wxBoxSizer *switcher = new wxBoxSizer(wxVERTICAL);
 
 
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640, 480))
 {
+	p1 = new panel1(this);
+	p1 -> Hide();
+	
 	menuPanel = new wxPanel(this);
 	switcher -> Add(menuPanel, 1, wxGROW);
 	
-	panel1 = new wxPanel(this);
-	panel1 -> SetBackgroundColour(wxColor(255, 255, 0));
-	switcher -> Add(panel1, 1, wxGROW);
-	panel1 -> Hide();
+	switcher -> Add(p1, 1, wxGROW);
 	
 	wxBoxSizer *boxSizer = new wxBoxSizer(wxVERTICAL);
 	
@@ -68,7 +67,7 @@ cMenu::~cMenu()
 
 void cMenu::OnClicked1(wxCommandEvent &evt)
 {
-	panel1 -> Show();
+	p1 -> Show();
 	menuPanel -> Hide();
 	
 }

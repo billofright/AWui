@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Zhengming Chen
-Date                   :=05/07/22
+Date                   :=07/07/22
 CodeLitePath           :=/home/zhengming/.codelite
 MakeDirCommand         :=mkdir -p
 LinkerName             :=g++
@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) $(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) 
 
 
 
@@ -102,6 +102,16 @@ $(IntermediateDirectory)/menu.cpp$(ObjectSuffix): menu.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menu.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menu.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/menu.cpp$(PreprocessSuffix): menu.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/menu.cpp$(PreprocessSuffix) menu.cpp
+
+$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix): panel1.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/panel1.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix): panel1.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix) panel1.cpp
+
+$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix): menuPanel.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menuPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix): menuPanel.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix) menuPanel.cpp
 
 ##
 ## Clean

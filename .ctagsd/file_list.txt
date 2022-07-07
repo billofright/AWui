@@ -1,4 +1,8 @@
 /home/zhengming/Documents/billyuan/workspace/AWui/app.cpp
-/home/zhengming/Documents/billyuan/workspace/AWui/menu.h
-/home/zhengming/Documents/billyuan/workspace/AWui/app.h
 /home/zhengming/Documents/billyuan/workspace/AWui/menu.cpp
+/home/zhengming/Documents/billyuan/workspace/AWui/app.h
+/home/zhengming/Documents/billyuan/workspace/AWui/panel1.cpp
+/home/zhengming/Documents/billyuan/workspace/AWui/panel1.h
+/home/zhengming/Documents/billyuan/workspace/AWui/menuPanel.cpp
+/home/zhengming/Documents/billyuan/workspace/AWui/menu.h
+/home/zhengming/Documents/billyuan/workspace/AWui/menuPanel.h
