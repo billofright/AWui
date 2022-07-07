@@ -29,9 +29,9 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640,
 	p1 -> Hide();
 	switcher -> Add(p1, 1, wxGROW);
 
-	p2 = new panel2(this);
-	p2 -> Hide();
-	switcher -> Add(p2, 1, wxGROW);
+//	p2 = new panel2(this);
+//	p2 -> Hide();
+//	switcher -> Add(p2, 1, wxGROW);
 	
 	this -> SetSizer(switcher);
 	
@@ -54,7 +54,7 @@ void cMenu::OnClicked1(wxCommandEvent &evt)
 void cMenu::OnClicked2(wxCommandEvent &evt)
 {
 	menu_p -> Hide();
-	p2 -> Show();
+	//p2 -> Show();
 	
 	switcher -> Layout();
 	evt.Skip();
@@ -79,7 +79,7 @@ void cMenu::OnClicked9(wxCommandEvent &evt)
 void cMenu::OnClicked10(wxCommandEvent &evt)
 {
 	menu_p -> Show();
-	p2 -> Hide();
+	//p2 -> Hide();
 	
 	switcher -> Layout();
 	evt.Skip();

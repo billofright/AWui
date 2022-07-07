@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/panel2.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) 
 
 
 
@@ -93,25 +93,20 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix): panel1.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/panel1.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix): panel1.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix) panel1.cpp
-
 $(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix): menuPanel.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menuPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix): menuPanel.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix) menuPanel.cpp
 
+$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix): panel1.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/panel1.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix): panel1.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix) panel1.cpp
+
 $(IntermediateDirectory)/app.cpp$(ObjectSuffix): app.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/app.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/app.cpp$(PreprocessSuffix): app.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/app.cpp$(PreprocessSuffix) app.cpp
-
-$(IntermediateDirectory)/panel2.cpp$(ObjectSuffix): panel2.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/panel2.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel2.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/panel2.cpp$(PreprocessSuffix): panel2.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/panel2.cpp$(PreprocessSuffix) panel2.cpp
 
 $(IntermediateDirectory)/menu.cpp$(ObjectSuffix): menu.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menu.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menu.cpp$(ObjectSuffix) $(IncludePath)

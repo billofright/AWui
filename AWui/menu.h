@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include "panel1.h"
 #include "menuPanel.h"
-#include "panel2.h"
+//#include "panel2.h"
 
 class cMenu : public wxFrame
 {
@@ -13,7 +13,7 @@ public:
 
 	menuPanel *menu_p = nullptr;
 	panel1* p1 = nullptr;
-	panel2* p2 = nullptr;
+	//panel2* p2 = nullptr;
 	
 	void OnClicked1(wxCommandEvent &evt);
 	void OnClicked2(wxCommandEvent &evt);
