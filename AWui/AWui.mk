@@ -6,8 +6,8 @@
 ProjectName            :=AWui
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
-WorkspacePath          :=/home/zhengming/Documents/billyuan/workspace
-ProjectPath            :=/home/zhengming/Documents/billyuan/workspace/AWui
+WorkspacePath          :=/home/zhengming/Downloads/AWui
+ProjectPath            :=/home/zhengming/Downloads/AWui/AWui
 IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/AWui
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
@@ -17,24 +17,24 @@ User                   :=Zhengming Chen
 Date                   :=07/07/22
 CodeLitePath           :=/home/zhengming/.codelite
 MakeDirCommand         :=mkdir -p
-LinkerName             :=g++
-SharedObjectLinkerName :=g++ -shared -fPIC
+LinkerName             :=/usr/bin/g++
+SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.o.i
-DebugSwitch            :=-gstab
+PreprocessSuffix       :=.i
+DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
 OutputSwitch           :=-o 
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputDirectory        :=/home/zhengming/Documents/billyuan/workspace/build-$(WorkspaceConfiguration)/bin
+OutputDirectory        :=/home/zhengming/Downloads/AWui/build-$(WorkspaceConfiguration)/bin
 OutputFile             :=../build-$(WorkspaceConfiguration)/bin/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
+PreprocessOnlySwitch   :=-E
 ObjectsFileList        :=$(IntermediateDirectory)/ObjectsList.txt
 PCHCompileFlags        :=
 LinkOptions            :=  $(shell wx-config   --libs --unicode=yes)
@@ -49,20 +49,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overridden using an environment variable
 ##
-AR       := ar rcus
-CXX      := g++
-CC       := gcc
+AR       := /usr/bin/ar rcu
+CXX      := /usr/bin/g++
+CC       := /usr/bin/gcc
 CXXFLAGS :=  -g -O0 -Wall $(shell wx-config --cxxflags --unicode=yes  ) $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(shell wx-config --cxxflags --unicode=yes  ) $(Preprocessors)
 ASFLAGS  := 
-AS       := as
+AS       := /usr/bin/as
 
 
 ##
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) $(IntermediateDirectory)/app.cpp$(ObjectSuffix) 
 
 
 
@@ -93,31 +93,48 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix): menuPanel.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menuPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix): menuPanel.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix) menuPanel.cpp
+$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix): panel1.cpp $(IntermediateDirectory)/panel1.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Downloads/AWui/AWui/panel1.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/panel1.cpp$(DependSuffix): panel1.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/panel1.cpp$(DependSuffix) -MM panel1.cpp
 
-$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix): panel1.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/panel1.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix): panel1.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix) panel1.cpp
 
-$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix): processProdutionPanel.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/processProdutionPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix): processProdutionPanel.cpp $(IntermediateDirectory)/processProdutionPanel.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Downloads/AWui/AWui/processProdutionPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/processProdutionPanel.cpp$(DependSuffix): processProdutionPanel.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/processProdutionPanel.cpp$(DependSuffix) -MM processProdutionPanel.cpp
+
 $(IntermediateDirectory)/processProdutionPanel.cpp$(PreprocessSuffix): processProdutionPanel.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/processProdutionPanel.cpp$(PreprocessSuffix) processProdutionPanel.cpp
 
-$(IntermediateDirectory)/app.cpp$(ObjectSuffix): app.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/app.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/app.cpp$(PreprocessSuffix): app.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/app.cpp$(PreprocessSuffix) app.cpp
+$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix): menuPanel.cpp $(IntermediateDirectory)/menuPanel.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Downloads/AWui/AWui/menuPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/menuPanel.cpp$(DependSuffix): menuPanel.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/menuPanel.cpp$(DependSuffix) -MM menuPanel.cpp
 
-$(IntermediateDirectory)/menu.cpp$(ObjectSuffix): menu.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menu.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menu.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix): menuPanel.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix) menuPanel.cpp
+
+$(IntermediateDirectory)/menu.cpp$(ObjectSuffix): menu.cpp $(IntermediateDirectory)/menu.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Downloads/AWui/AWui/menu.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menu.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/menu.cpp$(DependSuffix): menu.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/menu.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/menu.cpp$(DependSuffix) -MM menu.cpp
+
 $(IntermediateDirectory)/menu.cpp$(PreprocessSuffix): menu.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/menu.cpp$(PreprocessSuffix) menu.cpp
 
+$(IntermediateDirectory)/app.cpp$(ObjectSuffix): app.cpp $(IntermediateDirectory)/app.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Downloads/AWui/AWui/app.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/app.cpp$(DependSuffix): app.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/app.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/app.cpp$(DependSuffix) -MM app.cpp
+
+$(IntermediateDirectory)/app.cpp$(PreprocessSuffix): app.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/app.cpp$(PreprocessSuffix) app.cpp
+
+
+-include $(IntermediateDirectory)/*$(DependSuffix)
 ##
 ## Clean
 ##
