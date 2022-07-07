@@ -23,14 +23,14 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640,
 	
 	menu_p = new menuPanel(this);
 	switcher -> Add(menu_p, 1, wxGROW);
-	menu_p -> Show();
+	menu_p -> Hide();
 	
 	p1 = new panel1(this);
 	p1 -> Hide();
 	switcher -> Add(p1, 1, wxGROW);
 
 	pp_p = new processProductionPanel(this);
-	pp_p -> Hide();
+	pp_p -> Show();
 	switcher -> Add(pp_p, 1, wxGROW);
 	
 	this -> SetSizer(switcher);
