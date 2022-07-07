@@ -7,4 +7,5 @@ public:
 	~panel1();
 public:
 	wxTextCtrl* text = nullptr;
+	wxButton* backButton = nullptr;
 };

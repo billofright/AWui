@@ -1,11 +1,11 @@
-#include "panel1.h"
+#include <wx/wx.h>
 
-menuPanel::menuPanel(wxWindow* parent):wxPanel(parent)
+class menuPanel : public wxPanel
 {
-	
-	
-}
-
-menuPanel::~menuPanel()
-{
-}
+public:
+	menuPanel(wxWindow* parent);
+	~menuPanel();
+public:
+	wxButton **btns1;
+	wxButton **btns2;
+};

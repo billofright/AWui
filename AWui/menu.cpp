@@ -1,8 +1,10 @@
 #include "menu.h"
 
+// This class is responsible for handling the button pressed events and switching between the panels 
+
 wxBEGIN_EVENT_TABLE(cMenu, wxFrame)
 EVT_BUTTON(10001, cMenu::OnClicked1)
-EVT_BUTTON(10002, cMenu::OnClicked2)
+EVT_BUTTON(9999, cMenu::OnClicked2)
 EVT_BUTTON(10003, cMenu::OnClicked3)
 EVT_BUTTON(10004, cMenu::OnClicked4)
 
@@ -13,49 +15,17 @@ EVT_BUTTON(10008, cMenu::OnClicked8)
 
 wxEND_EVENT_TABLE()
 
-wxPanel* menuPanel;
-
-wxBoxSizer *switcher = new wxBoxSizer(wxVERTICAL);
-
-
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640, 480))
 {
+	switcher = new wxBoxSizer(wxVERTICAL);
+	
 	p1 = new panel1(this);
 	p1 -> Hide();
-	
-	menuPanel = new wxPanel(this);
-	switcher -> Add(menuPanel, 1, wxGROW);
-	
 	switcher -> Add(p1, 1, wxGROW);
-	
-	wxBoxSizer *boxSizer = new wxBoxSizer(wxVERTICAL);
-	
-	wxGridSizer *row1 = new wxGridSizer(1, 4, 10, 10);
-	wxGridSizer *row2 = new wxGridSizer(1, 4, 10, 10);
-	
-	btns1 = new wxButton*[4];
-	btns2 = new wxButton*[4];
-	
-	wxPanel *panel_middle = new wxPanel(menuPanel, wxID_ANY, wxDefaultPosition, wxSize(200, 100));
-	panel_middle -> SetBackgroundColour(wxColor(200, 200, 200));
-	
-	for(int i = 0; i < 4; i++){
-		btns1[i] = new wxButton(menuPanel, 10001 + i, "", wxDefaultPosition, wxSize(0, 75), 0, wxDefaultValidator, wxButtonNameStr);
-		row1 -> Add(btns1[i], 0, wxEXPAND | wxALL);
-		
-		btns2[i] = new wxButton(menuPanel, 10004 + i, "", wxDefaultPosition, wxSize(0, 75), 0, wxDefaultValidator, wxButtonNameStr);
-		row2 -> Add(btns2[i], 1, wxEXPAND | wxALL);
 
-	}
-	
-	btns1[0] -> SetLabel("Recipe");
-		
-	boxSizer -> Add(row1, 0, wxEXPAND | wxALL, 10);
-	boxSizer -> Add(panel_middle, 1, wxEXPAND | wxLEFT | wxRIGHT, 10);
-	boxSizer -> Add(row2, 0, wxEXPAND | wxALL, 10);
-	
-	menuPanel -> SetSizer(boxSizer);
-	menuPanel -> Layout();
+	menu_p = new menuPanel(this);
+	switcher -> Add(menu_p, 1, wxGROW);
+	menu_p -> Show();
 	
 	this -> SetSizer(switcher);
 	
@@ -67,12 +37,22 @@ cMenu::~cMenu()
 
 void cMenu::OnClicked1(wxCommandEvent &evt)
 {
+	menu_p -> Hide();
 	p1 -> Show();
-	menuPanel -> Hide();
+	
+	switcher -> Layout();
+	evt.Skip();
 	
 }
 
-void cMenu::OnClicked2(wxCommandEvent &evt){}
+void cMenu::OnClicked2(wxCommandEvent &evt)
+{
+	menu_p -> Show();
+	p1 -> Hide();
+	
+	switcher -> Layout();
+	evt.Skip();
+}
 void cMenu::OnClicked3(wxCommandEvent &evt){}
 void cMenu::OnClicked4(wxCommandEvent &evt){}
 
