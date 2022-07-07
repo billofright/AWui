@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IntermediateDirectory)/menu.cpp$(ObjectSuffix) 
 
 
 
@@ -93,11 +93,6 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix): processProdutionPanel.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/processProdutionPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/processProdutionPanel.cpp$(PreprocessSuffix): processProdutionPanel.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/processProdutionPanel.cpp$(PreprocessSuffix) processProdutionPanel.cpp
-
 $(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix): menuPanel.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/menuPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/menuPanel.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/menuPanel.cpp$(PreprocessSuffix): menuPanel.cpp
@@ -107,6 +102,11 @@ $(IntermediateDirectory)/panel1.cpp$(ObjectSuffix): panel1.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/panel1.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/panel1.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix): panel1.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/panel1.cpp$(PreprocessSuffix) panel1.cpp
+
+$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix): processProdutionPanel.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/processProdutionPanel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/processProdutionPanel.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/processProdutionPanel.cpp$(PreprocessSuffix): processProdutionPanel.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/processProdutionPanel.cpp$(PreprocessSuffix) processProdutionPanel.cpp
 
 $(IntermediateDirectory)/app.cpp$(ObjectSuffix): app.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/zhengming/Documents/billyuan/workspace/AWui/app.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/app.cpp$(ObjectSuffix) $(IncludePath)
