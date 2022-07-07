@@ -1,5 +1,5 @@
 build-Debug
-#/.codelite/
-#/.ctagsd/
+.codelite
+.ctagsd
 compile_commands.json
 !.gitignore
