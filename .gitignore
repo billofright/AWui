@@ -2,5 +2,4 @@ build-Debug
 #/.codelite/
 #/.ctagsd/
 compile_commands.json
-.*
 !.gitignore
