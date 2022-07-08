@@ -4,6 +4,8 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="Panels">
+      <File Name="diagnostics.h"/>
+      <File Name="diagnostics.cpp"/>
       <File Name="processProductionPanel.h"/>
       <File Name="processProdutionPanel.cpp"/>
       <File Name="panel1.h"/>
