@@ -15,6 +15,7 @@ EVT_BUTTON(10008, cMenu::OnClicked8)
 
 EVT_BUTTON(10009, cMenu::OnClicked9)
 EVT_BUTTON(10010, cMenu::OnClicked10)
+EVT_BUTTON(10011, cMenu::OnClicked11)
 wxEND_EVENT_TABLE()
 
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640, 480))
@@ -32,6 +33,10 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640,
 	pp_p = new processProductionPanel(this);
 	pp_p -> Show();
 	switcher -> Add(pp_p, 1, wxGROW);
+	
+	pStart = new processStartPanel(this);
+	pStart -> Hide();
+	switcher -> Add(pStart, 1, wxGROW);
 	
 	this -> SetSizer(switcher);
 	
@@ -88,3 +93,11 @@ void cMenu::OnClicked10(wxCommandEvent &evt)
 	evt.Skip();
 }
 
+void cMenu::OnClicked11(wxCommandEvent &evt)
+{
+	pStart -> Show();
+	pp_p -> Hide();
+	
+	switcher -> Layout();
+	evt.Skip();
+}

@@ -8,6 +8,7 @@ public:
 public:
 	wxTextCtrl* text = nullptr;
 	wxButton* backButton = nullptr;
+	wxButton* startButton = nullptr;
 	
 	wxListBox* dirID = nullptr;
 	wxListBox* lotID = nullptr;

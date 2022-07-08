@@ -8,7 +8,8 @@ processProductionPanel::processProductionPanel(wxWindow* parent):wxPanel(parent)
 	wxPanel* p1 = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(100, 100));
 	wxPanel* p2 = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(100, 100));
 
-	backButton = new wxButton(p1, 10010, "back", wxDefaultPosition, wxSize(100, 100), 0, wxDefaultValidator, wxButtonNameStr);
+	backButton = new wxButton(p1, 10010, "Back", wxDefaultPosition, wxSize(100, 50), 0, wxDefaultValidator, wxButtonNameStr);
+	startButton = new wxButton(p1, 10011, "Start", wxPoint(300, 100), wxSize(100, 50), 0, wxDefaultValidator, wxButtonNameStr);
 
 	wxBoxSizer* scrollBoxes[4];
 	wxPanel* scrollPanels[4];
@@ -22,23 +23,17 @@ processProductionPanel::processProductionPanel(wxWindow* parent):wxPanel(parent)
 
 	}
 	
-	wxTextCtrl* dirTitle = new wxTextCtrl(scrollPanels[0], wxID_ANY, "Directory ID", wxDefaultPosition, wxSize(0, 40), 0, wxDefaultValidator, wxTextCtrlNameStr);
+	wxStaticText* dirTitle = new wxStaticText(scrollPanels[0], wxID_ANY, "Directory ID", wxDefaultPosition, wxSize(0, 40), wxALIGN_CENTER_HORIZONTAL, wxStaticTextNameStr);
 	dirID = new wxListBox(scrollPanels[0], wxID_ANY, wxPoint(200, 200), wxSize(100, 200), 0, NULL, 0, wxDefaultValidator, wxListBoxNameStr);
 	
-	wxTextCtrl* lotTitle = new wxTextCtrl(scrollPanels[1], wxID_ANY, "Lot ID", wxDefaultPosition, wxSize(0, 40), 0, wxDefaultValidator, wxTextCtrlNameStr);	
+	wxStaticText* lotTitle = new wxStaticText(scrollPanels[1], wxID_ANY, "Lot ID", wxDefaultPosition, wxSize(0, 40), wxALIGN_CENTER_HORIZONTAL, wxStaticTextNameStr);	
 	lotID = new wxListBox(scrollPanels[1], wxID_ANY, wxPoint(200, 200), wxSize(100, 200), 0, NULL, 0, wxDefaultValidator, wxListBoxNameStr);
 	
-	wxTextCtrl* dataTitle = new wxTextCtrl(scrollPanels[2], wxID_ANY, "Data ID", wxDefaultPosition, wxSize(0, 40), 0, wxDefaultValidator, wxTextCtrlNameStr);
+	wxStaticText* dataTitle = new wxStaticText(scrollPanels[2], wxID_ANY, "Data ID", wxDefaultPosition, wxSize(0, 40), wxALIGN_CENTER_HORIZONTAL, wxStaticTextNameStr);
 	dataID = new wxListBox(scrollPanels[2], wxID_ANY, wxPoint(200, 200), wxSize(100, 200), 0, NULL, 0, wxDefaultValidator, wxListBoxNameStr);
 	
-	wxTextCtrl* recipesTitle = new wxTextCtrl(scrollPanels[3], wxID_ANY, "Recipe File", wxDefaultPosition, wxSize(0, 40), 0, wxDefaultValidator, wxTextCtrlNameStr);
+	wxStaticText* recipesTitle = new wxStaticText(scrollPanels[3], wxID_ANY, "Recipe File", wxDefaultPosition, wxSize(0, 40), wxALIGN_CENTER_HORIZONTAL, wxStaticTextNameStr);
 	recipes = new wxListBox(scrollPanels[3], wxID_ANY, wxPoint(200, 200), wxSize(100, 200), 0, NULL, 0, wxDefaultValidator, wxListBoxNameStr);
-
-//	
-//	scrollerSizer -> Add(lotID, 1, wxGROW);
-//	scrollerSizer -> Add(dataID, 1, wxGROW);
-//	scrollerSizer -> Add(recipes, 1, wxGROW);
-
 	
 	for(int i = 0; i < 20; i++)
 	{

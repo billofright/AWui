@@ -2,6 +2,7 @@
 #include "panel1.h"
 #include "menuPanel.h"
 #include "processProductionPanel.h"
+#include "processStartPanel.h"
 
 class cMenu : public wxFrame
 {
@@ -14,6 +15,7 @@ public:
 	menuPanel *menu_p = nullptr;
 	panel1* p1 = nullptr;
 	processProductionPanel* pp_p = nullptr;	
+	processStartPanel* pStart = nullptr;
 	
 	void OnClicked1(wxCommandEvent &evt);
 	void OnClicked2(wxCommandEvent &evt);
@@ -27,6 +29,7 @@ public:
 	
 	void OnClicked9(wxCommandEvent &evt);
 	void OnClicked10(wxCommandEvent &evt);
+	void OnClicked11(wxCommandEvent &evt);
 
 	
 	wxDECLARE_EVENT_TABLE();
