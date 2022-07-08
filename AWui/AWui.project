@@ -3,6 +3,10 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="resources">
+      <File Name="integrated_button.h"/>
+      <File Name="integrated_button.cpp"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="Panels">
       <File Name="diagnostics.h"/>
       <File Name="diagnostics.cpp"/>
