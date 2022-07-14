@@ -4,6 +4,8 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="resources">
+      <File Name="adjust_button.h" ExcludeProjConfig=""/>
+      <File Name="adjust_button.cpp" ExcludeProjConfig=""/>
       <File Name="integrated_button.h"/>
       <File Name="integrated_button.cpp"/>
     </VirtualDirectory>

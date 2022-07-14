@@ -3,12 +3,14 @@
 class integrated_button
 {
 public:
-	integrated_button(wxWindow *parent, wxPoint xy, wxWindowID ID, wxString label);
+	integrated_button(wxWindow *parent, wxPoint xy, wxWindowID ID, wxString label, wxString default_num);
 	~integrated_button();
+	
 public:
-	//int x, y;
-	//std::string label;
-	//std::string default_text;
 	wxButton* button = nullptr;
 	wxTextCtrl* txt_box = nullptr;
+	wxSize button_size = wxSize(100, 60);
+	wxSize text_size = wxSize(80,25);
+	
+	void adjust_colour(wxColour background, wxColour foreground);
 };
