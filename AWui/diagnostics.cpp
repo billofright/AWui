@@ -23,18 +23,18 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 	
 	
 	// left-top 2nd column
-	/*adjustment_btns = new adjust_button*[6];
+	adjustment_btns = new adjust_button*[6];
 	
 	for(int i=0; i<6; i++){
 		if(i%2==0) // back arrows
 		{
-			adjustment_btns[i] = new adjust_button(this, wxPoint(110, 60*(i/2)), 10012, false);
+			adjustment_btns[i] = new adjust_button(this, wxPoint(110, 60*(i/2)), 10012, true);
 		}
 		else
 		{
-			adjustment_btns[i] = new adjust_button(this, wxPoint(110+50, 60*(i/2)), 10012, true);
+			adjustment_btns[i] = new adjust_button(this, wxPoint(110+50, 60*(i/2)), 10012, false);
 		}
-	}*/
+	}
 	
 	
 	
