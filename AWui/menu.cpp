@@ -1,5 +1,16 @@
 #include "menu.h"
 
+
+
+// initialize GLOBAL variables
+int SCREEN_SIZE_X = 640;
+int SCREEN_SIZE_Y = 480;
+int BUTTON_SIZE_X = 90;
+int BUTTON_SIZE_Y = 45;
+
+
+
+
 // This class is responsible for handling the button pressed events and switching between the panels 
 
 wxBEGIN_EVENT_TABLE(cMenu, wxFrame)
@@ -18,7 +29,7 @@ EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
 EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
 wxEND_EVENT_TABLE()
 
-cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640, 480))
+cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCREEN_SIZE_X, SCREEN_SIZE_Y))
 {
 	switcher = new wxBoxSizer(wxVERTICAL);
 	

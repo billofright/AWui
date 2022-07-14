@@ -1,4 +1,5 @@
 #include <wx/wx.h>
+#include "GLOBAL_CONSTANTS.cpp"
 #include "panel1.h"
 #include "menuPanel.h"
 #include "processProductionPanel.h"
