@@ -25,6 +25,7 @@ EVT_BUTTON(10007, cMenu::OnClicked7)
 EVT_BUTTON(10008, cMenu::OnClicked8)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 EVT_BUTTON(10009, cMenu::OnClicked9)
 EVT_BUTTON(10010, cMenu::OnClicked10)
 EVT_BUTTON(10011, cMenu::OnClicked11)
@@ -33,6 +34,16 @@ EVT_BUTTON(10009, cMenu::OnClicked_P1_BACK)
 EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
 EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
 >>>>>>> 1ec7ab5ace5a6e2c26b6bfbd799ded5c124de008
+=======
+EVT_BUTTON(10009, cMenu::OnClicked_P1_BACK)
+EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
+EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
+
+EVT_BUTTON(10012, cMenu::OnClicked9)
+EVT_BUTTON(10013, cMenu::OnClicked10)
+EVT_BUTTON(10014, cMenu::OnClicked11)
+
+>>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 wxEND_EVENT_TABLE()
 
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCREEN_SIZE_X, SCREEN_SIZE_Y))
@@ -41,25 +52,35 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	
 	menu_p = new menuPanel(this);
 	switcher -> Add(menu_p, 1, wxGROW);
-	menu_p -> Hide();
+	menu_p -> Show();
 	
 	p1 = new panel1(this);
 	p1 -> Hide();
 	switcher -> Add(p1, 1, wxGROW);
 
 	pp_p = new processProductionPanel(this);
-	pp_p -> Show();
+	pp_p -> Hide();
 	switcher -> Add(pp_p, 1, wxGROW);
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 	pStart = new processStartPanel(this);
 	pStart -> Hide();
 	switcher -> Add(pStart, 1, wxGROW);
 =======
+=======
+	pStart = new processStartPanel(this);
+	pStart -> Hide();
+	switcher -> Add(pStart, 1, wxGROW);
+  
+>>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	diag = new diagnosticsPanel(this);
-	diag -> Show();
+	diag -> Hide();
 	switcher -> Add(diag, 1, wxGROW);
+<<<<<<< HEAD
 >>>>>>> 1ec7ab5ace5a6e2c26b6bfbd799ded5c124de008
+=======
+>>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	
 	this -> SetSizer(switcher);
 	
@@ -126,10 +147,14 @@ void cMenu::OnClicked_PP_BACK(wxCommandEvent &evt) // needs to be renamed; back 
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
+<<<<<<< HEAD
 =======
 void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
 {
@@ -137,6 +162,16 @@ void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; bac
 	diag -> Hide();
 >>>>>>> 1ec7ab5ace5a6e2c26b6bfbd799ded5c124de008
 	
+=======
+  switcher -> Layout();
+  evt.Skip();
+}
+
+void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
+{
+	menu_p -> Show();
+	diag -> Hide();	
+>>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	switcher -> Layout();
 	evt.Skip();
 }

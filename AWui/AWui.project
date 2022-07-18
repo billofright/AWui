@@ -12,12 +12,19 @@
     </VirtualDirectory>
     <VirtualDirectory Name="Panels">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <File Name="processStartPanel.h"/>
       <File Name="processStartPanel.cpp"/>
 =======
       <File Name="diagnostics.h"/>
       <File Name="diagnostics.cpp"/>
 >>>>>>> 1ec7ab5ace5a6e2c26b6bfbd799ded5c124de008
+=======
+      <File Name="processStartPanel.h"/>
+      <File Name="processStartPanel.cpp"/>
+      <File Name="diagnostics.h"/>
+      <File Name="diagnostics.cpp"/>
+>>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
       <File Name="processProductionPanel.h"/>
       <File Name="processProdutionPanel.cpp"/>
       <File Name="panel1.h"/>
