@@ -1,8 +1,10 @@
 #include <wx/wx.h>
+#include "GLOBAL_CONSTANTS.cpp"
 #include "panel1.h"
 #include "menuPanel.h"
 #include "processProductionPanel.h"
 #include "processStartPanel.h"
+#include "diagnostics.h"
 
 class cMenu : public wxFrame
 {
@@ -16,6 +18,8 @@ public:
 	panel1* p1 = nullptr;
 	processProductionPanel* pp_p = nullptr;	
 	processStartPanel* pStart = nullptr;
+	processProductionPanel* pp_p = nullptr;
+	diagnosticsPanel* diag = nullptr;
 	
 	void OnClicked1(wxCommandEvent &evt);
 	void OnClicked2(wxCommandEvent &evt);
@@ -30,6 +34,10 @@ public:
 	void OnClicked9(wxCommandEvent &evt);
 	void OnClicked10(wxCommandEvent &evt);
 	void OnClicked11(wxCommandEvent &evt);
+
+	void OnClicked_P1_BACK(wxCommandEvent &evt);
+	void OnClicked_PP_BACK(wxCommandEvent &evt);
+	void OnClicked_Diag_BACK(wxCommandEvent &evt);
 
 	
 	wxDECLARE_EVENT_TABLE();

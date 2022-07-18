@@ -1,5 +1,16 @@
 #include "menu.h"
 
+
+
+// initialize GLOBAL variables
+int SCREEN_SIZE_X = 640;
+int SCREEN_SIZE_Y = 480;
+int BUTTON_SIZE_X = 90;
+int BUTTON_SIZE_Y = 45;
+
+
+
+
 // This class is responsible for handling the button pressed events and switching between the panels 
 
 wxBEGIN_EVENT_TABLE(cMenu, wxFrame)
@@ -13,12 +24,17 @@ EVT_BUTTON(10006, cMenu::OnClicked6)
 EVT_BUTTON(10007, cMenu::OnClicked7)
 EVT_BUTTON(10008, cMenu::OnClicked8)
 
-EVT_BUTTON(10009, cMenu::OnClicked9)
-EVT_BUTTON(10010, cMenu::OnClicked10)
-EVT_BUTTON(10011, cMenu::OnClicked11)
+EVT_BUTTON(10009, cMenu::OnClicked_P1_BACK)
+EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
+EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
+
+EVT_BUTTON(10012, cMenu::OnClicked9)
+EVT_BUTTON(10013, cMenu::OnClicked10)
+EVT_BUTTON(10014, cMenu::OnClicked11)
+
 wxEND_EVENT_TABLE()
 
-cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640, 480))
+cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCREEN_SIZE_X, SCREEN_SIZE_Y))
 {
 	switcher = new wxBoxSizer(wxVERTICAL);
 	
@@ -37,6 +53,10 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(640,
 	pStart = new processStartPanel(this);
 	pStart -> Hide();
 	switcher -> Add(pStart, 1, wxGROW);
+  
+	diag = new diagnosticsPanel(this);
+	diag -> Show();
+	switcher -> Add(diag, 1, wxGROW);
 	
 	this -> SetSizer(switcher);
 	
@@ -72,10 +92,19 @@ void cMenu::OnClicked4(wxCommandEvent &evt){}
 
 void cMenu::OnClicked5(wxCommandEvent &evt){}
 void cMenu::OnClicked6(wxCommandEvent &evt){}
-void cMenu::OnClicked7(wxCommandEvent &evt){}
+
+void cMenu::OnClicked7(wxCommandEvent &evt)
+{
+	menu_p -> Hide();
+	diag -> Show();
+	
+	switcher -> Layout();
+	evt.Skip();	
+}
+
 void cMenu::OnClicked8(wxCommandEvent &evt){}
 
-void cMenu::OnClicked9(wxCommandEvent &evt)
+void cMenu::OnClicked_P1_BACK(wxCommandEvent &evt) // needs to be renamed; back button for p1
 {
 	menu_p -> Show();
 	p1 -> Hide();
@@ -84,7 +113,7 @@ void cMenu::OnClicked9(wxCommandEvent &evt)
 	evt.Skip();
 }
 
-void cMenu::OnClicked10(wxCommandEvent &evt)
+void cMenu::OnClicked_PP_BACK(wxCommandEvent &evt) // needs to be renamed; back button for pp panel
 {
 	menu_p -> Show();
 	pp_p -> Hide();
@@ -97,7 +126,14 @@ void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
-	
+  switcher -> Layout();
+  evt.Skip();
+}
+
+void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
+{
+	menu_p -> Show();
+	diag -> Hide();	
 	switcher -> Layout();
 	evt.Skip();
 }
