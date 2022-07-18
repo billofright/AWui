@@ -35,7 +35,6 @@ public:
 =======
 	processProductionPanel* pp_p = nullptr;	
 	processStartPanel* pStart = nullptr;
-	processProductionPanel* pp_p = nullptr;
 	diagnosticsPanel* diag = nullptr;
 >>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	

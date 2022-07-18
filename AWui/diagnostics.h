@@ -24,6 +24,11 @@ public:
 	wxButton* vacuum_leak_check = nullptr;
 	wxButton* main_vacuum_off = nullptr;
 	wxButton* soft_start = nullptr;
-	
+// top right buttons
+	wxButton* chamber_door_open = nullptr;
+	wxButton* chamber_door_close = nullptr;
+
+// bottom right buttons	
+	wxButton* helpButton = nullptr;
 	wxButton* exitButton = nullptr;
 };
