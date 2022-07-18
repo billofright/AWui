@@ -3,7 +3,16 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="resources">
+      <File Name="GLOBAL_CONSTANTS.cpp"/>
+      <File Name="adjust_button.h" ExcludeProjConfig=""/>
+      <File Name="adjust_button.cpp" ExcludeProjConfig=""/>
+      <File Name="integrated_button.h"/>
+      <File Name="integrated_button.cpp"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="Panels">
+      <File Name="diagnostics.h"/>
+      <File Name="diagnostics.cpp"/>
       <File Name="processProductionPanel.h"/>
       <File Name="processProdutionPanel.cpp"/>
       <File Name="panel1.h"/>
