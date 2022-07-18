@@ -1,4 +1,5 @@
 #include <wx/wx.h>
+#include "GLOBAL_CONSTANTS.cpp"
 
 class panel1 : public wxPanel
 {
