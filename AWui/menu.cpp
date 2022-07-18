@@ -28,10 +28,6 @@ EVT_BUTTON(10009, cMenu::OnClicked_P1_BACK)
 EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
 EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
 
-EVT_BUTTON(10012, cMenu::OnClicked9)
-EVT_BUTTON(10013, cMenu::OnClicked10)
-EVT_BUTTON(10014, cMenu::OnClicked11)
-
 wxEND_EVENT_TABLE()
 
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCREEN_SIZE_X, SCREEN_SIZE_Y))
@@ -126,8 +122,8 @@ void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
-  switcher -> Layout();
-  evt.Skip();
+	switcher -> Layout();
+	evt.Skip();
 }
 
 void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel

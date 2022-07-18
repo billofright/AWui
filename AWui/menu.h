@@ -18,7 +18,6 @@ public:
 	panel1* p1 = nullptr;
 	processProductionPanel* pp_p = nullptr;	
 	processStartPanel* pStart = nullptr;
-	processProductionPanel* pp_p = nullptr;
 	diagnosticsPanel* diag = nullptr;
 	
 	void OnClicked1(wxCommandEvent &evt);
