@@ -36,8 +36,8 @@ void processStartPanel::OnPaint(wxPaintEvent &evt)
 	
 	if(gc)
 	{
-		wxPoint circleOrigin = this -> FromDIP(wxPoint(189, 200));
-		wxSize circleSize = this -> FromDIP(wxSize(100, 100));
+		wxPoint circleOrigin = wxPoint(189, 200);
+		wxSize circleSize = wxSize(100, 100);
 		
 		gc -> SetPen(*wxBLACK_PEN);
 		gc -> DrawEllipse(circleOrigin.x, circleOrigin.y, circleSize.GetWidth(), circleSize.GetHeight());
