@@ -3,10 +3,10 @@
 
 
 // initialize GLOBAL variables
-int SCREEN_SIZE_X = 640;
-int SCREEN_SIZE_Y = 480;
-int BUTTON_SIZE_X = 90;
-int BUTTON_SIZE_Y = 45;
+int SCREEN_SIZE_X = 960;
+int SCREEN_SIZE_Y = 720;
+int BUTTON_SIZE_X = 100;
+int BUTTON_SIZE_Y = 50;
 
 
 

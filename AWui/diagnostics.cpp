@@ -46,7 +46,7 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 	
 
 // bottom buttons
-	// reference vars
+	// TEMPORARY reference vars
 	int row_one_y = 8*BUTTON_SIZE_Y;
 	int row_two_y = 9.2*BUTTON_SIZE_Y;
 	int row_three_y = 10.4*BUTTON_SIZE_Y;
@@ -54,6 +54,8 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 	
 	pressure = new integrated_button(this, wxPoint(0,row_one_y), 10012, "PRESSURE(Tr)", "0.000");
 	EOP = new integrated_button(this, wxPoint(0,row_two_y), 10012, "EOP()", "0.0");
+	pressure -> adjust_colour(*wxYELLOW, *wxRED);
+	EOP -> adjust_colour(*wxYELLOW, *wxRED);
 	
 	vent_valve = new wxButton(this, 10012, "VENT VALVE", wxPoint(column_ref, row_three_y), wxSize(BUTTON_SIZE_X,BUTTON_SIZE_Y));
 	throttle_valve_test = new wxButton(this, 10012, "THROTTLE VALVE TEST", wxPoint(column_ref*2, row_one_y), wxSize(BUTTON_SIZE_X,BUTTON_SIZE_Y));;
@@ -62,18 +64,29 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 	vacuum_leak_check = new wxButton(this, 10012, "VACCUM LEAK CHECK", wxPoint(column_ref*3, row_one_y), wxSize(BUTTON_SIZE_X,BUTTON_SIZE_Y));;
 	main_vacuum_off = new wxButton(this, 10012, "MAIN VACUUM OFF", wxPoint(column_ref*3, row_two_y), wxSize(BUTTON_SIZE_X,BUTTON_SIZE_Y));;
 	soft_start = new wxButton(this, 10012, "SOFT START", wxPoint(column_ref*3, row_three_y), wxSize(BUTTON_SIZE_X,BUTTON_SIZE_Y));;
+	vent_valve -> SetBackgroundColour(*wxCYAN);
+	throttle_valve_test -> SetBackgroundColour(*wxCYAN);
+	AF_on -> SetBackgroundColour(*wxCYAN);
+	main_valve_close -> SetBackgroundColour(*wxCYAN);
+	vacuum_leak_check -> SetBackgroundColour(*wxCYAN);
+	main_vacuum_off -> SetBackgroundColour(*wxCYAN);
+	soft_start -> SetBackgroundColour(*wxCYAN);
+	
+	
+// top right buttons
+	chamber_door_open = new wxButton(this, 10012, "Chamber Door Open", wxPoint(column_ref*4, 0.25*BUTTON_SIZE_Y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
+	chamber_door_close = new wxButton(this, 10012, "Chamber Door Close", wxPoint(column_ref*4, 1.5*BUTTON_SIZE_Y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
+	chamber_door_open -> SetBackgroundColour(*wxCYAN);
+	chamber_door_close -> SetBackgroundColour(*wxCYAN); 
 	
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	exitButton = new wxButton(this, 10011, "Exit", wxPoint(540,380), wxSize(100, 100), 0, wxDefaultValidator, wxButtonNameStr);
-	this -> Layout();
+// bottom right interface buttons
+	helpButton = new wxButton(this, 10012, "Help", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_two_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
+	exitButton = new wxButton(this, 10011, "Exit", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_three_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y), 0, wxDefaultValidator, wxButtonNameStr);
+	//this -> Layout();
 }
 
 
