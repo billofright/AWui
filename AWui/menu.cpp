@@ -27,6 +27,11 @@ EVT_BUTTON(10008, cMenu::OnClicked8)
 EVT_BUTTON(10009, cMenu::OnClicked_P1_BACK)
 EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
 EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
+
+EVT_BUTTON(10012, cMenu::OnClicked9)
+EVT_BUTTON(10013, cMenu::OnClicked10)
+EVT_BUTTON(10014, cMenu::OnClicked11)
+
 wxEND_EVENT_TABLE()
 
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCREEN_SIZE_X, SCREEN_SIZE_Y))
@@ -35,7 +40,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	
 	menu_p = new menuPanel(this);
 	switcher -> Add(menu_p, 1, wxGROW);
-	menu_p -> Hide();
+	menu_p -> Show();
 	
 	p1 = new panel1(this);
 	p1 -> Hide();
@@ -45,8 +50,12 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	pp_p -> Hide();
 	switcher -> Add(pp_p, 1, wxGROW);
 	
+	pStart = new processStartPanel(this);
+	pStart -> Hide();
+	switcher -> Add(pStart, 1, wxGROW);
+  
 	diag = new diagnosticsPanel(this);
-	diag -> Show();
+	diag -> Hide();
 	switcher -> Add(diag, 1, wxGROW);
 	
 	this -> SetSizer(switcher);
@@ -113,11 +122,18 @@ void cMenu::OnClicked_PP_BACK(wxCommandEvent &evt) // needs to be renamed; back 
 	evt.Skip();
 }
 
+void cMenu::OnClicked11(wxCommandEvent &evt)
+{
+	pStart -> Show();
+	pp_p -> Hide();
+  switcher -> Layout();
+  evt.Skip();
+}
+
 void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
 {
 	menu_p -> Show();
-	diag -> Hide();
-	
+	diag -> Hide();	
 	switcher -> Layout();
 	evt.Skip();
 }

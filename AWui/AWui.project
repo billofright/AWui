@@ -11,6 +11,8 @@
       <File Name="integrated_button.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Panels">
+      <File Name="processStartPanel.h"/>
+      <File Name="processStartPanel.cpp"/>
       <File Name="diagnostics.h"/>
       <File Name="diagnostics.cpp"/>
       <File Name="processProductionPanel.h"/>
