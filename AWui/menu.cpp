@@ -47,26 +47,14 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	pp_p = new processProductionPanel(this);
 	pp_p -> Hide();
 	switcher -> Add(pp_p, 1, wxGROW);
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	pStart = new processStartPanel(this);
-	pStart -> Hide();
-	switcher -> Add(pStart, 1, wxGROW);
-=======
-=======
+
 	pStart = new processStartPanel(this);
 	pStart -> Hide();
 	switcher -> Add(pStart, 1, wxGROW);
   
->>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	diag = new diagnosticsPanel(this);
 	diag -> Hide();
 	switcher -> Add(diag, 1, wxGROW);
-<<<<<<< HEAD
->>>>>>> 1ec7ab5ace5a6e2c26b6bfbd799ded5c124de008
-=======
->>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	
 	this -> SetSizer(switcher);
 	
@@ -132,38 +120,28 @@ void cMenu::OnClicked_PP_BACK(wxCommandEvent &evt) // needs to be renamed; back 
 	evt.Skip();
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
+
 void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+	switcher -> Layout();
+	evt.Skip();
+}
+
 void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
 {
 	menu_p -> Show();
 	diag -> Hide();
->>>>>>> 1ec7ab5ace5a6e2c26b6bfbd799ded5c124de008
-	
-=======
   switcher -> Layout();
   evt.Skip();
-=======
-	
-	switcher -> Layout();
-	evt.Skip();
->>>>>>> 342b313152a35e40207f1c5ff9a1ebd110f3014e
+
 }
 
 void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
 {
 	menu_p -> Show();
 	diag -> Hide();	
->>>>>>> 8a639af3a9deb0e03eff13c475ea5582528f7131
 	switcher -> Layout();
 	evt.Skip();
 }
