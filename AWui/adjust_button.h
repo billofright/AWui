@@ -11,6 +11,5 @@ public:
 	bool back;
 	void set_arrow();
 	
-	
 	wxSize button_size = wxSize(BUTTON_SIZE_X*0.5, BUTTON_SIZE_Y); // half the horizontal length as x=integrated button length
 };

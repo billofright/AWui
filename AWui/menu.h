@@ -5,8 +5,6 @@
 #include "processProductionPanel.h"
 #include "processStartPanel.h"
 #include "diagnostics.h"
-#include "processStartPanel.h"
-#include "diagnostics.h"
 
 class cMenu : public wxFrame
 {

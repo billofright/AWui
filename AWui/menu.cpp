@@ -137,11 +137,3 @@ void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; bac
   evt.Skip();
 
 }
-
-void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
-{
-	menu_p -> Show();
-	diag -> Hide();	
-	switcher -> Layout();
-	evt.Skip();
-}
