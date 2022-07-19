@@ -4,6 +4,8 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="resources">
+      <File Name="BasicDrawPane.h"/>
+      <File Name="BasicDrawPane.cpp"/>
       <File Name="GLOBAL_CONSTANTS.cpp"/>
       <File Name="adjust_button.h" ExcludeProjConfig=""/>
       <File Name="adjust_button.cpp" ExcludeProjConfig=""/>
@@ -114,4 +116,6 @@
       </Completion>
     </Configuration>
   </Settings>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

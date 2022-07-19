@@ -74,20 +74,95 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 	
 	
 // top right buttons
-	chamber_door_open = new wxButton(this, 10012, "Chamber Door Open", wxPoint(column_ref*4, 0.25*BUTTON_SIZE_Y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
-	chamber_door_close = new wxButton(this, 10012, "Chamber Door Close", wxPoint(column_ref*4, 1.5*BUTTON_SIZE_Y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
+	chamber_door_open = new wxButton(this, 10012, "Chamber Door Open", wxPoint(4*column_ref, 0.25*BUTTON_SIZE_Y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
+	chamber_door_close = new wxButton(this, 10012, "Chamber Door Close", wxPoint(4*column_ref, 1.5*BUTTON_SIZE_Y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
 	chamber_door_open -> SetBackgroundColour(*wxCYAN);
 	chamber_door_close -> SetBackgroundColour(*wxCYAN); 
 	
 	
-	
+// graphics!
+	this -> Bind(wxEVT_PAINT, &diagnosticsPanel::OnPaint, this);
 	
 	
 // bottom right interface buttons
 	helpButton = new wxButton(this, 10012, "Help", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_two_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
 	exitButton = new wxButton(this, 10011, "Exit", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_three_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y), 0, wxDefaultValidator, wxButtonNameStr);
-	//this -> Layout();
+	this -> Layout();
 }
+
+
+
+
+
+void diagnosticsPanel::OnPaint(wxPaintEvent &evt)
+{
+	
+	int column_ref = 1.1*BUTTON_SIZE_X;
+	
+	
+	wxBufferedPaintDC dc(this);
+	dc.Clear();
+    
+    // rectangle
+    //dc.SetBrush(*wxGREY_BRUSH);
+    dc.SetPen( wxPen( *wxBLACK, 2 ) );
+    dc.DrawRectangle( 4.3*column_ref, 4.5*BUTTON_SIZE_Y, 2*BUTTON_SIZE_X, 3.5*BUTTON_SIZE_Y);
+	
+	// circle_outer
+    dc.SetBrush(*wxTRANSPARENT_BRUSH);
+    dc.SetPen( wxPen( *wxWHITE, 2 ) );
+    dc.DrawCircle( wxPoint( 4.3*column_ref+BUTTON_SIZE_X, 6.25*BUTTON_SIZE_Y ), 0.75*BUTTON_SIZE_Y);
+	
+	// circle_inner
+	dc.SetBrush(*wxGREY_BRUSH);
+    dc.SetPen( wxPen( *wxBLACK, 2 ) );
+    dc.DrawCircle( wxPoint( 4.3*column_ref+BUTTON_SIZE_X, 6.25*BUTTON_SIZE_Y ), 0.5*BUTTON_SIZE_Y);
+	
+	// top right lines
+		// lines
+	dc.SetPen( wxPen(*wxBLACK, 2) );
+	dc.DrawLine(2.2*BUTTON_SIZE_X, 0.5*BUTTON_SIZE_Y, 3.8*column_ref, 0.5*BUTTON_SIZE_Y);
+	dc.DrawLine(2.2*BUTTON_SIZE_X, 2.5*BUTTON_SIZE_Y, 3.8*column_ref, 2.5*BUTTON_SIZE_Y);
+	dc.DrawLine(2.2*BUTTON_SIZE_X, 4.5*BUTTON_SIZE_Y, 3.8*column_ref, 4.5*BUTTON_SIZE_Y);
+	dc.DrawLine(3.8*column_ref, 0.5*BUTTON_SIZE_Y,3.8*column_ref, 6*BUTTON_SIZE_Y);
+	dc.DrawLine(3.8*column_ref, 6*BUTTON_SIZE_Y, 4.3*column_ref, 6*BUTTON_SIZE_Y);
+		// pink circles
+	dc.SetBrush(*wxRED_BRUSH);
+	dc.DrawCircle(wxPoint(2.6*BUTTON_SIZE_X,0.5*BUTTON_SIZE_Y),0.18*BUTTON_SIZE_Y);
+	dc.DrawCircle(wxPoint(2.6*BUTTON_SIZE_X,2.5*BUTTON_SIZE_Y),0.18*BUTTON_SIZE_Y);
+	dc.DrawCircle(wxPoint(2.6*BUTTON_SIZE_X,4.5*BUTTON_SIZE_Y),0.18*BUTTON_SIZE_Y);
+		// rectangle things
+	dc.SetBrush(*wxWHITE_BRUSH);
+	dc.SetPen(*wxBLACK);
+	dc.DrawRectangle(3*column_ref,0.2*BUTTON_SIZE_Y,0.35*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	dc.DrawRectangle(3*column_ref+0.35*BUTTON_SIZE_X-1,0.2*BUTTON_SIZE_Y,0.2*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	dc.DrawRectangle(3*column_ref,2.2*BUTTON_SIZE_Y,0.35*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	dc.DrawRectangle(3*column_ref+0.35*BUTTON_SIZE_X-1,2.2*BUTTON_SIZE_Y,0.2*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	dc.DrawRectangle(3*column_ref,4.2*BUTTON_SIZE_Y,0.35*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	dc.DrawRectangle(3*column_ref+0.35*BUTTON_SIZE_X-1,4.2*BUTTON_SIZE_Y,0.2*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	
+	/*
+    // draw some text
+    dc.DrawText(wxT("Testing"), 40, 60); 
+    
+    // draw a circle
+    dc.SetBrush(*wxGREEN_BRUSH); // green filling
+    dc.SetPen( wxPen( wxColor(255,0,0), 5 ) ); // 5-pixels-thick red outline
+    dc.DrawCircle( wxPoint(200,100), 25);
+    
+    // draw a rectangle
+    dc.SetBrush(*wxBLUE_BRUSH); // blue filling
+    dc.SetPen( wxPen( wxColor(255,175,175), 10 ) ); // 10-pixels-thick pink outline
+    dc.DrawRectangle( 300, 100, 400, 200 );
+    
+    // draw a line
+    dc.SetPen( wxPen( wxColor(0,0,0), 3 ) ); // black line, 3 pixels thick
+    dc.DrawLine( 300, 100, 700, 300 ); // draw line across the rectangle
+    
+    // Look at the wxDC docs to learn how to draw other stuff
+	*/
+}
+
 
 
 

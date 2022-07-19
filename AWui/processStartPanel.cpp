@@ -28,7 +28,7 @@ processStartPanel::~processStartPanel()
 void processStartPanel::OnPaint(wxPaintEvent &evt)
 {
 	
-	wxAutoBufferedPaintDC dc(this);
+	wxBufferedPaintDC dc(this);
 	dc.Clear();
 	
 	wxGraphicsContext *gc = wxGraphicsContext::Create(dc);
