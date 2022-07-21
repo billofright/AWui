@@ -125,6 +125,9 @@ void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
+	
+	pStart -> CreateAndStart();
+	
 	switcher -> Layout();
 	evt.Skip();
 }
@@ -133,7 +136,7 @@ void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; bac
 {
 	menu_p -> Show();
 	diag -> Hide();
-  switcher -> Layout();
-  evt.Skip();
+	switcher -> Layout();
+	evt.Skip();
 
 }
