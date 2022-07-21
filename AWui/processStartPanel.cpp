@@ -43,7 +43,7 @@ void processStartPanel::OnGuiThreadEvent(wxThreadEvent& event)
 void processStartPanel::OnPaint(wxPaintEvent &event)
 {
 	
-	wxPaintDC dc(this);
+  wxPaintDC dc(this);
 	
 	const wxSize& sz = dc.GetSize();
 	

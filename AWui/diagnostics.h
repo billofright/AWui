@@ -2,6 +2,9 @@
 #include "integrated_button.h"
 #include "adjust_button.h"
 #include "GLOBAL_CONSTANTS.cpp"
+//#include "BasicDrawPane.h"
+#include <wx/dcbuffer.h>
+#include <wx/graphics.h>
 
 class diagnosticsPanel : public wxPanel
 {	
@@ -29,6 +32,13 @@ public:
 	wxButton* chamber_door_close = nullptr;
 
 // bottom right buttons	
+	integrated_button* thermocouple = nullptr;
 	wxButton* helpButton = nullptr;
 	wxButton* exitButton = nullptr;
+	
+	
+// graphics!
+	void OnPaint(wxPaintEvent& evt);
+	
+	
 };

@@ -5,6 +5,7 @@ class integrated_button
 {
 public:
 	integrated_button(wxWindow *parent, wxPoint xy, wxWindowID ID, wxString label, wxString default_num);
+	integrated_button(wxWindow *parent, wxPoint xy, wxWindowID ID, wxString label, wxString default_num, wxSize size);
 	~integrated_button();
 	
 public:
