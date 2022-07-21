@@ -32,6 +32,7 @@ public:
 	wxButton* chamber_door_close = nullptr;
 
 // bottom right buttons	
+	integrated_button* thermocouple = nullptr;
 	wxButton* helpButton = nullptr;
 	wxButton* exitButton = nullptr;
 	

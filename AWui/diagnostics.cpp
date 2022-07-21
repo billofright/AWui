@@ -85,12 +85,11 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 	
 	
 // bottom right interface buttons
+	thermocouple = new integrated_button(this, wxPoint(SCREEN_SIZE_X-3.15*BUTTON_SIZE_X, row_two_y), 10012, "THERMOCOUPLE(°C)", "0.0", wxSize(1.5*BUTTON_SIZE_X, BUTTON_SIZE_Y));
 	helpButton = new wxButton(this, 10012, "Help", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_two_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
 	exitButton = new wxButton(this, 10011, "Exit", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_three_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y), 0, wxDefaultValidator, wxButtonNameStr);
 	this -> Layout();
 }
-
-
 
 
 
@@ -140,6 +139,13 @@ void diagnosticsPanel::OnPaint(wxPaintEvent &evt)
 	dc.DrawRectangle(3*column_ref+0.35*BUTTON_SIZE_X-1,2.2*BUTTON_SIZE_Y,0.2*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
 	dc.DrawRectangle(3*column_ref,4.2*BUTTON_SIZE_Y,0.35*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
 	dc.DrawRectangle(3*column_ref+0.35*BUTTON_SIZE_X-1,4.2*BUTTON_SIZE_Y,0.2*BUTTON_SIZE_X,0.6*BUTTON_SIZE_Y);
+	
+	// red lines in top right
+	dc.SetPen(*wxRED);
+	dc.DrawLine(4.3*column_ref+BUTTON_SIZE_X, 4.5*BUTTON_SIZE_Y, 4.3*column_ref+BUTTON_SIZE_X, BUTTON_SIZE_Y);
+	dc.DrawLine(4.3*column_ref+BUTTON_SIZE_X, BUTTON_SIZE_Y, 4.3*column_ref+2*BUTTON_SIZE_X, BUTTON_SIZE_Y);
+	dc.DrawLine(4.3*column_ref+BUTTON_SIZE_X+1, 4.5*BUTTON_SIZE_Y, 4.3*column_ref+BUTTON_SIZE_X+1, BUTTON_SIZE_Y);
+	dc.DrawLine(4.3*column_ref+BUTTON_SIZE_X, BUTTON_SIZE_Y-1, 4.3*column_ref+2*BUTTON_SIZE_X, BUTTON_SIZE_Y-1);
 	
 	/*
     // draw some text
