@@ -3,43 +3,59 @@
 #include <wx/dcbuffer.h>
 #include <wx/dc.h>
 
+BEGIN_EVENT_TABLE(processStartPanel, wxPanel)
+	EVT_THREAD(wxID_ANY, processStartPanel::OnGuiThreadEvent)
+END_EVENT_TABLE()
 
-void drawLine()
+processStartPanel::processStartPanel(wxWindow* parent):wxPanel(parent), m_thread(this)
 {
-//	for(int i = 0; i < 500; i++){
-//		gc -> SetPen(*wxRED_PEN);
-//		gc -> DrawRectangle(0, 0, i, i);
-//		sleep(50);
-//	}
-}
-
-processStartPanel::processStartPanel(wxWindow* parent):wxPanel(parent)
-{
-	text = new wxTextCtrl(this, wxID_ANY, "text", wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxTextCtrlNameStr);
+	text = new wxTextCtrl(this, wxID_ANY, "begin", wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxTextCtrlNameStr);
 	this -> Bind(wxEVT_PAINT, &processStartPanel::OnPaint, this);
 }
 
 processStartPanel::~processStartPanel()
 {
+	m_thread.Delete();
 }
 
+void processStartPanel::CreateAndStart()
+{
+	if(processStartPanel::m_thread.Create() != wxTHREAD_NO_ERROR || processStartPanel::m_thread.Run() != wxTHREAD_NO_ERROR)
+	{
+		wxLogError("cant create thread!");
+		return;
+	}
+}
 
+void processStartPanel::OnGuiThreadEvent(wxThreadEvent& event)
+{
+	std::cout << "running" << std::endl;
+	m_nCurrentProgress = int(((float)event.GetInt()*100)/50);
+	
+	if(m_nCurrentProgress == 100) {
+		text -> SetLabel("finished");
+		m_thread.Wait();
+	}
 
-void processStartPanel::OnPaint(wxPaintEvent &evt)
+    Refresh();
+}
+
+void processStartPanel::OnPaint(wxPaintEvent &event)
 {
 	
-	wxAutoBufferedPaintDC dc(this);
-	dc.Clear();
+	wxPaintDC dc(this);
 	
-	wxGraphicsContext *gc = wxGraphicsContext::Create(dc);
-
+	const wxSize& sz = dc.GetSize();
 	
-	if(gc)
 	{
-		wxPoint circleOrigin = wxPoint(189, 200);
-		wxSize circleSize = wxSize(100, 100);
-		
-		gc -> SetPen(*wxBLACK_PEN);
-		gc -> DrawEllipse(circleOrigin.x, circleOrigin.y, circleSize.GetWidth(), circleSize.GetHeight());
+		dc.DrawBitmap(m_bmp, (sz.GetWidth()-300)/2,
+                             (sz.GetHeight()-300)/2);
 	}
+	
+	dc.SetBrush(*wxRED_BRUSH);
+    dc.DrawRectangle(10,10, m_nCurrentProgress*(sz.GetWidth()-20)/100,30);
+    dc.SetTextForeground(*wxBLUE);
+    dc.DrawText(wxString::Format("%d%%", m_nCurrentProgress),
+                (sz.GetWidth()-dc.GetCharWidth()*2)/2,
+                25-dc.GetCharHeight()/2);
 }
