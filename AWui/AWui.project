@@ -6,8 +6,6 @@
     <VirtualDirectory Name="resources">
       <File Name="GUIThread.cpp"/>
       <File Name="GUIThread.h"/>
-      <File Name="BasicDrawPane.h"/>
-      <File Name="BasicDrawPane.cpp"/>
       <File Name="GLOBAL_CONSTANTS.cpp"/>
       <File Name="adjust_button.h" ExcludeProjConfig=""/>
       <File Name="adjust_button.cpp" ExcludeProjConfig=""/>

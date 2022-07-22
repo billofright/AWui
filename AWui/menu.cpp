@@ -28,7 +28,7 @@ EVT_BUTTON(10009, cMenu::OnClicked_P1_BACK)
 EVT_BUTTON(10010, cMenu::OnClicked_PP_BACK)
 EVT_BUTTON(10011, cMenu::OnClicked_Diag_BACK)
 
-EVT_BUTTON(10012, cMenu::OnClicked11)
+EVT_BUTTON(10020, cMenu::OnClicked11)
 
 wxEND_EVENT_TABLE()
 
