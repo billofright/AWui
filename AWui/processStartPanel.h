@@ -16,9 +16,12 @@ private:
 	
 public:
 	void OnGuiThreadEvent(wxThreadEvent &event);
-	void OnPaint(wxPaintEvent& event);
+	void OnPaintProgress(wxPaintEvent& event);
+	
 	void CreateAndStart();
-	wxTextCtrl* text = nullptr;
+	wxButton* start = nullptr;
+	
+	void OnStartClicked(wxCommandEvent& evt);
 
 	DECLARE_EVENT_TABLE();
 };

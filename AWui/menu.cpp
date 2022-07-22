@@ -38,7 +38,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	
 	menu_p = new menuPanel(this);
 	switcher -> Add(menu_p, 1, wxGROW);
-	menu_p -> Show();
+	menu_p -> Hide();
 	
 	p1 = new panel1(this);
 	p1 -> Hide();
@@ -49,7 +49,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	switcher -> Add(pp_p, 1, wxGROW);
 
 	pStart = new processStartPanel(this);
-	pStart -> Hide();
+	pStart -> Show();
 	switcher -> Add(pStart, 1, wxGROW);
   
 	diag = new diagnosticsPanel(this);
@@ -125,9 +125,7 @@ void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
-	
-	pStart -> CreateAndStart();
-	
+		
 	switcher -> Layout();
 	evt.Skip();
 }
