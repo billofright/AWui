@@ -47,7 +47,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	pp_p = new processProductionPanel(this);
 	pp_p -> Hide();
 	switcher -> Add(pp_p, 1, wxGROW);
-	
+
 	pStart = new processStartPanel(this);
 	pStart -> Hide();
 	switcher -> Add(pStart, 1, wxGROW);
@@ -120,11 +120,11 @@ void cMenu::OnClicked_PP_BACK(wxCommandEvent &evt) // needs to be renamed; back 
 	evt.Skip();
 }
 
+
 void cMenu::OnClicked11(wxCommandEvent &evt)
 {
 	pStart -> Show();
 	pp_p -> Hide();
-	
 	switcher -> Layout();
 	evt.Skip();
 }
@@ -132,7 +132,8 @@ void cMenu::OnClicked11(wxCommandEvent &evt)
 void cMenu::OnClicked_Diag_BACK(wxCommandEvent &evt) // needs to be renamed; back button for diags panel
 {
 	menu_p -> Show();
-	diag -> Hide();	
-	switcher -> Layout();
-	evt.Skip();
+	diag -> Hide();
+  switcher -> Layout();
+  evt.Skip();
+
 }
