@@ -9,7 +9,7 @@ processProductionPanel::processProductionPanel(wxWindow* parent):wxPanel(parent)
 	wxPanel* p2 = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(100, 100));
 
 	backButton = new wxButton(p1, 10010, "Back", wxDefaultPosition, wxSize(100, 50), 0, wxDefaultValidator, wxButtonNameStr);
-	startButton = new wxButton(p1, 10012, "Start", wxPoint(300, 100), wxSize(100, 50), 0, wxDefaultValidator, wxButtonNameStr);
+	startButton = new wxButton(p1, 10020, "start", wxPoint(300, 100), wxSize(100, 50), 0, wxDefaultValidator, wxButtonNameStr);
 
 	wxBoxSizer* scrollBoxes[4];
 	wxPanel* scrollPanels[4];
