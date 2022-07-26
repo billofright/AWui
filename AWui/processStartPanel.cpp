@@ -54,9 +54,7 @@ void processStartPanel::OnPaintProgress(wxPaintEvent &event)
 		wxPoint dotPoint = wxGetMousePosition();
 		dotPoint.x = (dotPoint.x * dotPoint.x) / wxGetDisplaySize().x;
 		dotPoint.y = (dotPoint.y * dotPoint.y) / wxGetDisplaySize().y;
-		
-		std::cout << dotPoint.x << std::endl;
-		
+				
 		dc.SetBrush(*wxRED_BRUSH);
 		dc.SetPen(wxNullPen);
 		dc.DrawCircle(dotPoint, 5);
