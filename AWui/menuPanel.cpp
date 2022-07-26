@@ -14,10 +14,10 @@ menuPanel::menuPanel(wxWindow* parent):wxPanel(parent)
 	panel_middle -> SetBackgroundColour(wxColor(200, 200, 200));
 	
 	for(int i = 0; i < 5; i++){
-		btns1[i] = new wxButton(this, 10001 + i, "", wxDefaultPosition, wxSize(0, 75), 0, wxDefaultValidator, wxButtonNameStr);
+		btns1[i] = new wxButton(this, 10000 + i, "", wxDefaultPosition, wxSize(0, 75), 0, wxDefaultValidator, wxButtonNameStr);
 		row1 -> Add(btns1[i], 0, wxEXPAND | wxALL);
 		
-		btns2[i] = new wxButton(this, 10004 + i, "", wxDefaultPosition, wxSize(0, 75), 0, wxDefaultValidator, wxButtonNameStr);
+		btns2[i] = new wxButton(this, 10005 + i, "", wxDefaultPosition, wxSize(0, 75), 0, wxDefaultValidator, wxButtonNameStr);
 		row2 -> Add(btns2[i], 1, wxEXPAND | wxALL);
 
 	}
