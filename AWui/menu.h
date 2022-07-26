@@ -6,6 +6,9 @@
 #include "processStartPanel.h"
 #include "diagnostics.h"
 #include "gems_sec_setup.h"
+#include "gems_sec_test.h"
+#include "gems_sec_manager.h"
+#include "gems_sec_gemstone.h"
 
 class cMenu : public wxFrame
 {
@@ -21,6 +24,9 @@ public:
 	processStartPanel* pStart = nullptr;
 	diagnosticsPanel* diag = nullptr;
 	gems_sec_panel* gems_sec = nullptr; 
+	gems_sec_test_panel* gems_sec_test = nullptr;
+	gems_sec_manager_panel* gems_sec_manager = nullptr;
+	gems_sec_gemstone_panel* gems_sec_gemstone = nullptr;
 	
 	void OnClicked0(wxCommandEvent &evt);
 	void OnClicked1(wxCommandEvent &evt);
@@ -40,6 +46,13 @@ public:
 	void OnClicked_GEMS_BACK(wxCommandEvent &evt); 
 
 	void OnClicked11(wxCommandEvent &evt);
+	
+	void OnClicked_GEMS_TEST(wxCommandEvent &evt); 
+	void OnClicked_GEMS_MANAGER(wxCommandEvent &evt); 
+	void OnClicked_GEMS_GEMSTONE(wxCommandEvent &evt); 
+	void OnClicked_GEMS_TEST_BACK(wxCommandEvent &evt); 
+	void OnClicked_GEMS_MANAGER_BACK(wxCommandEvent &evt); 
+	void OnClicked_GEMS_GEMSTONE_BACK(wxCommandEvent &evt); 
 
 	
 	wxDECLARE_EVENT_TABLE();
