@@ -1,5 +1,4 @@
 #include "GUIThread.h"
-#include <sys/time.h>
 
 wxThread::ExitCode GUIThread::Entry()
 {
@@ -7,7 +6,7 @@ wxThread::ExitCode GUIThread::Entry()
 	for (int i=0; i<1000 && !TestDestroy(); i++){
 		wxMutexGuiEnter();
 		{
-			//wxCriticalSectionLocker(m_frm -> m_csBmp);
+			wxCriticalSectionLocker lock(m_frm -> m_frm.m_csBmp);
 			wxMilliSleep(10);
 		}
 		wxMutexGuiLeave();

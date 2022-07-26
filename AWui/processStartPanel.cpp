@@ -64,12 +64,12 @@ void processStartPanel::OnPaintProgress(wxPaintEvent &event)
 	
 	dc.SetPen(*wxBLACK_PEN);
 	dc.SetBrush(wxNullBrush);
-	dc.DrawCircle(300, 500, 100);
+	dc.DrawCircle(500, 300, 100);
 	
-//	{
-//		dc.DrawBitmap(m_bmp, (sz.GetWidth()-300)/2,
-//                             (sz.GetHeight()-300)/2);
-//	}
+	{
+		dc.DrawBitmap(m_bmp, (sz.GetWidth()-300)/2,
+                             (sz.GetHeight()-300)/2);
+	}
 	
 	dc.SetBrush(*wxRED_BRUSH);
     dc.DrawRectangle(10,10, m_nCurrentProgress*(sz.GetWidth()-20)/100,30);
