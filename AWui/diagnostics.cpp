@@ -87,7 +87,7 @@ diagnosticsPanel::diagnosticsPanel(wxWindow* parent):wxPanel(parent)
 // bottom right interface buttons
 	thermocouple = new integrated_button(this, wxPoint(SCREEN_SIZE_X-3.15*BUTTON_SIZE_X, row_two_y), 10012, "THERMOCOUPLE(°C)", "0.0", wxSize(1.5*BUTTON_SIZE_X, BUTTON_SIZE_Y));
 	helpButton = new wxButton(this, 10012, "Help", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_two_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y));
-	exitButton = new wxButton(this, 10011, "Exit", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_three_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y), 0, wxDefaultValidator, wxButtonNameStr);
+	exitButton = new wxButton(this, 10018, "Exit", wxPoint(SCREEN_SIZE_X-1.5*BUTTON_SIZE_X, row_three_y), wxSize(BUTTON_SIZE_X, BUTTON_SIZE_Y), 0, wxDefaultValidator, wxButtonNameStr);
 	this -> Layout();
 }
 
