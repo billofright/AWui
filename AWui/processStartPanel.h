@@ -1,6 +1,7 @@
 #include <wx/wx.h>
 #include "GUIThread.h"
 
+
 class processStartPanel : public wxPanel
 {
 public:
@@ -8,7 +9,7 @@ public:
 	~processStartPanel();
 	
 	wxBitmap m_bmp;
-	wxCriticalSection m_csBmp;
+	wxCriticalSection *m_csBmp;
 	
 private:
 	GUIThread m_thread;
@@ -16,9 +17,12 @@ private:
 	
 public:
 	void OnGuiThreadEvent(wxThreadEvent &event);
-	void OnPaint(wxPaintEvent& event);
+	void OnPaintProgress(wxPaintEvent& event);
+	
 	void CreateAndStart();
-	wxTextCtrl* text = nullptr;
+	wxButton* start = nullptr;
+	
+	void OnStartClicked(wxCommandEvent& evt);
 
 	DECLARE_EVENT_TABLE();
 };

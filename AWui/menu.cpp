@@ -172,7 +172,7 @@ void cMenu::OnClicked11(wxCommandEvent &evt) // change this name
 	pStart -> Show();
 	pp_p -> Hide();
 	
-	pStart -> CreateAndStart();
+	//pStart -> CreateAndStart();
 	
 	switcher -> Layout();
 	evt.Skip();

@@ -2,12 +2,12 @@
 
 wxThread::ExitCode GUIThread::Entry()
 {
-	
-	for (int i=0; i<50 && !TestDestroy(); i++){
+		
+	for (int i=0; i<1000 && !TestDestroy(); i++){
 		wxMutexGuiEnter();
 		{
-			//wxCriticalSectionLocker(m_frm -> m_csBmp);
-			wxMilliSleep(100);
+//			wxCriticalSectionLocker lock(m_frm -> m_csBmp);
+			wxMilliSleep(10);
 		}
 		wxMutexGuiLeave();
 		
