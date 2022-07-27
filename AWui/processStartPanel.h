@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 #include "GUIThread.h"
-
+#include "GLOBAL_CONSTANTS.h"
 
 class processStartPanel : public wxPanel
 {
@@ -21,6 +21,7 @@ public:
 	
 	void CreateAndStart();
 	wxButton* start = nullptr;
+	wxButton* processMonitor = nullptr;
 	
 	void OnStartClicked(wxCommandEvent& evt);
 

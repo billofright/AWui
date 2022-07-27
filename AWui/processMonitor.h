@@ -1,11 +1,11 @@
 #include <wx/wx.h>
 #include "GLOBAL_CONSTANTS.h"
 
-class panel1 : public wxPanel
+class processMonitor : public wxPanel
 {
 public:
-	panel1(wxWindow* parent);
-	~panel1();
+	processMonitor(wxWindow* parent);
+	~processMonitor();
 public:
 	wxTextCtrl* text = nullptr;
 	wxButton* backButton = nullptr;

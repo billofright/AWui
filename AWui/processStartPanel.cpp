@@ -5,13 +5,15 @@
 #include <wx/gdicmn.h>
 
 BEGIN_EVENT_TABLE(processStartPanel, wxPanel)
-	EVT_THREAD(wxID_ANY, processStartPanel::OnGuiThreadEvent)
+	EVT_THREAD(GUI_THREAD_EVENT, processStartPanel::OnGuiThreadEvent)
 	EVT_BUTTON(10021, processStartPanel::OnStartClicked)
 END_EVENT_TABLE()
 
 processStartPanel::processStartPanel(wxWindow* parent):wxPanel(parent), m_thread(this)
 {
 	start = new wxButton(this, 10021, "begin", wxPoint(800, 600), wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr);
+	processMonitor = new wxButton(this, 10030, "Process Monitor", wxPoint(600, 600), wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr);
+	
 	this -> Bind(wxEVT_PAINT, &processStartPanel::OnPaintProgress, this);
 }
 
@@ -31,7 +33,7 @@ void processStartPanel::OnStartClicked(wxCommandEvent& event)
 
 void processStartPanel::OnGuiThreadEvent(wxThreadEvent& event)
 {
-	std::cout << "running" << std::endl;
+	//std::cout << "running" << std::endl;
 	m_nCurrentProgress = int(((float)event.GetInt()*100)/1000);
 	
 	if(m_nCurrentProgress == 1000) {

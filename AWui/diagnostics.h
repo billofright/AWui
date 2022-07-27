@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include "integrated_button.h"
 #include "adjust_button.h"
-#include "GLOBAL_CONSTANTS.cpp"
+#include "GLOBAL_CONSTANTS.h"
 //#include "BasicDrawPane.h"
 #include <wx/dcbuffer.h>
 #include <wx/graphics.h>

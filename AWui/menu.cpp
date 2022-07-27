@@ -8,6 +8,9 @@ int SCREEN_SIZE_Y = 720;
 int BUTTON_SIZE_X = 100;
 int BUTTON_SIZE_Y = 50;
 
+int GUI_THREAD_EVENT = 11000;
+
+
 
 
 
@@ -33,6 +36,8 @@ EVT_BUTTON(10018, cMenu::OnClicked_Diag_BACK)
 
 EVT_BUTTON(10020, cMenu::OnClicked11)
 
+EVT_BUTTON(10030, cMenu::OnClicked_PP_PM)
+
 wxEND_EVENT_TABLE()
 
 cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCREEN_SIZE_X, SCREEN_SIZE_Y))
@@ -41,7 +46,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	
 	menu_p = new menuPanel(this);
 	switcher -> Add(menu_p, 1, wxGROW);
-	menu_p -> Show();
+	menu_p -> Hide();
 	
 	p1 = new panel1(this);
 	p1 -> Hide();
@@ -52,8 +57,12 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	switcher -> Add(pp_p, 1, wxGROW);
 
 	pStart = new processStartPanel(this);
-	pStart -> Hide();
+	pStart -> Show();
 	switcher -> Add(pStart, 1, wxGROW);
+	
+	pM = new processMonitor(this);
+	pM -> Hide();
+	switcher -> Add(pM, 1, wxGROW);
   
 	diag = new diagnosticsPanel(this);
 	diag -> Hide();
@@ -135,6 +144,15 @@ void cMenu::OnClicked_P1_BACK(wxCommandEvent &evt) // needs to be renamed; back 
 {
 	menu_p -> Show();
 	p1 -> Hide();
+	
+	switcher -> Layout();
+	evt.Skip();
+}
+
+void cMenu::OnClicked_PP_PM(wxCommandEvent& evt)
+{
+	pM -> Show();
+	pStart -> Hide();
 	
 	switcher -> Layout();
 	evt.Skip();

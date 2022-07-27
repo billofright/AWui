@@ -1,11 +1,12 @@
 #include <wx/wx.h>
-#include "GLOBAL_CONSTANTS.cpp"
+#include "GLOBAL_CONSTANTS.h"
 #include "panel1.h"
 #include "menuPanel.h"
 #include "processProductionPanel.h"
 #include "processStartPanel.h"
 #include "diagnostics.h"
 #include "gems_sec_setup.h"
+#include "processMonitor.h"
 
 class cMenu : public wxFrame
 {
@@ -19,6 +20,7 @@ public:
 	panel1* p1 = nullptr;
 	processProductionPanel* pp_p = nullptr;	
 	processStartPanel* pStart = nullptr;
+	processMonitor* pM = nullptr;
 	diagnosticsPanel* diag = nullptr;
 	gems_sec_panel* gems_sec = nullptr; 
 	
@@ -36,6 +38,7 @@ public:
 
 	void OnClicked_P1_BACK(wxCommandEvent &evt);
 	void OnClicked_PP_BACK(wxCommandEvent &evt);
+	void OnClicked_PP_PM(wxCommandEvent &evt);
 	void OnClicked_Diag_BACK(wxCommandEvent &evt);
 	void OnClicked_GEMS_BACK(wxCommandEvent &evt); 
 

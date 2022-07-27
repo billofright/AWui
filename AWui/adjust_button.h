@@ -1,5 +1,5 @@
 #include <wx/wx.h>
-#include "GLOBAL_CONSTANTS.cpp"
+#include "GLOBAL_CONSTANTS.h"
 
 class adjust_button
 {

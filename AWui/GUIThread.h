@@ -1,4 +1,5 @@
 #include <wx/wx.h>
+#include "GLOBAL_CONSTANTS.h"
 
 
 class GUIThread : public wxThread
