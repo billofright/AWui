@@ -1,17 +1,17 @@
 #include <wx/wx.h>
 #include "GLOBAL_CONSTANTS.h"
+#include <vector>
 
-
-class GUIThread : public wxThread
+class chartThread : public wxThread
 {
 public:
-	GUIThread(wxPanel *frm):wxThread(wxTHREAD_JOINABLE)
+	chartThread(wxPanel *frm):wxThread(wxTHREAD_JOINABLE)
 	{
 		m_frm = frm;
 	}
 	virtual ExitCode Entry();
+	
 private:
 	wxPanel *m_frm;
 	
-
 };

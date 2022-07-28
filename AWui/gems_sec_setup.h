@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 #include "wx/sizer.h"
-#include "GLOBAL_CONSTANTS.cpp"
+#include "GLOBAL_CONSTANTS.h"
 
 class gems_sec_panel : public wxPanel
 {

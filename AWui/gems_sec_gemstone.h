@@ -1,5 +1,5 @@
 #include <wx/wx.h>
-#include "GLOBAL_CONSTANTS.cpp"
+#include "GLOBAL_CONSTANTS.h"
 
 class gems_sec_gemstone_panel : public wxPanel
 {

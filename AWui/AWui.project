@@ -4,15 +4,20 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="resources">
+      <File Name="chartThread.h"/>
+      <File Name="chartThread.cpp"/>
+      <File Name="data.csv"/>
+      <File Name="GLOBAL_CONSTANTS.h"/>
       <File Name="GUIThread.cpp"/>
       <File Name="GUIThread.h"/>
-      <File Name="GLOBAL_CONSTANTS.cpp"/>
       <File Name="adjust_button.h" ExcludeProjConfig=""/>
       <File Name="adjust_button.cpp" ExcludeProjConfig=""/>
       <File Name="integrated_button.h"/>
       <File Name="integrated_button.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Panels">
+      <File Name="processMonitor.h"/>
+      <File Name="processMonitor.cpp"/>
       <File Name="gems_sec_gemstone.h"/>
       <File Name="gems_sec_gemstone.cpp"/>
       <File Name="gems_sec_manager.h"/>

@@ -8,6 +8,10 @@ int SCREEN_SIZE_Y = 720;
 int BUTTON_SIZE_X = 100;
 int BUTTON_SIZE_Y = 50;
 
+int GUI_THREAD_EVENT = 11000;
+int CHART_THREAD_EVENT = 11001;
+
+
 
 
 
@@ -33,6 +37,7 @@ EVT_BUTTON(10018, cMenu::OnClicked_Diag_BACK)
 
 EVT_BUTTON(10020, cMenu::OnClicked11)
 
+EVT_BUTTON(10030, cMenu::OnClicked_PP_PM)
 EVT_BUTTON(10031, cMenu::OnClicked_GEMS_TEST)
 EVT_BUTTON(10032, cMenu::OnClicked_GEMS_MANAGER)
 EVT_BUTTON(10033, cMenu::OnClicked_GEMS_GEMSTONE)
@@ -61,6 +66,10 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	pStart = new processStartPanel(this);
 	pStart -> Hide();
 	switcher -> Add(pStart, 1, wxGROW);
+	
+	pM = new processMonitor(this);
+	pM -> Hide();
+	switcher -> Add(pM, 1, wxGROW);
   
 	diag = new diagnosticsPanel(this);
 	diag -> Hide();
@@ -159,6 +168,15 @@ void cMenu::OnClicked_P1_BACK(wxCommandEvent &evt) // needs to be renamed; back 
 	evt.Skip();
 }
 
+void cMenu::OnClicked_PP_PM(wxCommandEvent& evt)
+{
+	pM -> Show();
+	pStart -> Hide();
+	
+	switcher -> Layout();
+	evt.Skip();
+}
+
 void cMenu::OnClicked_PP_BACK(wxCommandEvent &evt) // needs to be renamed; back button for pp panel
 {
 	menu_p -> Show();
@@ -191,7 +209,7 @@ void cMenu::OnClicked11(wxCommandEvent &evt) // change this name
 	pStart -> Show();
 	pp_p -> Hide();
 	
-	pStart -> CreateAndStart();
+	//pStart -> CreateAndStart();
 	
 	switcher -> Layout();
 	evt.Skip();
