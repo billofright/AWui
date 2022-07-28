@@ -1,3 +1,4 @@
+#pragma once
 #include <wx/wx.h>
 #include "GLOBAL_CONSTANTS.cpp"
 
