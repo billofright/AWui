@@ -1,4 +1,3 @@
-
 // edit values in MENU.cpp
 
 extern int SCREEN_SIZE_X;

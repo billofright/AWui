@@ -38,6 +38,12 @@ EVT_BUTTON(10018, cMenu::OnClicked_Diag_BACK)
 EVT_BUTTON(10020, cMenu::OnClicked11)
 
 EVT_BUTTON(10030, cMenu::OnClicked_PP_PM)
+EVT_BUTTON(10031, cMenu::OnClicked_GEMS_TEST)
+EVT_BUTTON(10032, cMenu::OnClicked_GEMS_MANAGER)
+EVT_BUTTON(10033, cMenu::OnClicked_GEMS_GEMSTONE)
+EVT_BUTTON(10034, cMenu::OnClicked_GEMS_TEST_BACK)
+EVT_BUTTON(10035, cMenu::OnClicked_GEMS_MANAGER_BACK)
+EVT_BUTTON(10036, cMenu::OnClicked_GEMS_GEMSTONE_BACK)
 
 wxEND_EVENT_TABLE()
 
@@ -47,7 +53,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	
 	menu_p = new menuPanel(this);
 	switcher -> Add(menu_p, 1, wxGROW);
-	menu_p -> Hide();
+	menu_p -> Show();
 	
 	p1 = new panel1(this);
 	p1 -> Hide();
@@ -62,7 +68,7 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	switcher -> Add(pStart, 1, wxGROW);
 	
 	pM = new processMonitor(this);
-	pM -> Show();
+	pM -> Hide();
 	switcher -> Add(pM, 1, wxGROW);
   
 	diag = new diagnosticsPanel(this);
@@ -72,6 +78,18 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	gems_sec = new gems_sec_panel(this);
 	gems_sec -> Hide();
 	switcher -> Add(gems_sec, 1, wxGROW);
+	
+	gems_sec_test = new gems_sec_test_panel(this);
+	gems_sec_test -> Hide();
+	switcher -> Add(gems_sec_test, 1, wxGROW);
+	
+	gems_sec_manager = new gems_sec_manager_panel(this);
+	gems_sec_manager -> Hide();
+	switcher -> Add(gems_sec_manager, 1, wxGROW);
+	
+	gems_sec_gemstone = new gems_sec_gemstone_panel(this);
+	gems_sec_gemstone -> Hide();
+	switcher -> Add(gems_sec_gemstone, 1, wxGROW);
 	
 	this -> SetSizer(switcher);
 	
@@ -193,6 +211,57 @@ void cMenu::OnClicked11(wxCommandEvent &evt) // change this name
 	
 	//pStart -> CreateAndStart();
 	
+	switcher -> Layout();
+	evt.Skip();
+}
+
+
+
+
+void cMenu::OnClicked_GEMS_TEST(wxCommandEvent &evt)
+{
+	gems_sec_test -> Show();
+	gems_sec -> Hide();
+	switcher -> Layout();
+	evt.Skip();
+}
+
+void cMenu::OnClicked_GEMS_MANAGER(wxCommandEvent &evt)
+{
+	gems_sec_manager -> Show();
+	gems_sec -> Hide();
+	switcher -> Layout();
+	evt.Skip();
+}
+
+void cMenu::OnClicked_GEMS_GEMSTONE(wxCommandEvent &evt)
+{
+	gems_sec_gemstone -> Show();
+	gems_sec -> Hide();
+	switcher -> Layout();
+	evt.Skip();
+}
+
+void cMenu::OnClicked_GEMS_TEST_BACK(wxCommandEvent &evt)
+{
+	gems_sec -> Show();
+	gems_sec_test -> Hide();
+	switcher -> Layout();
+	evt.Skip();
+}
+
+void cMenu::OnClicked_GEMS_MANAGER_BACK(wxCommandEvent &evt)
+{
+	gems_sec -> Show();
+	gems_sec_manager -> Hide();
+	switcher -> Layout();
+	evt.Skip();
+}
+
+void cMenu::OnClicked_GEMS_GEMSTONE_BACK(wxCommandEvent &evt)
+{
+	gems_sec -> Show();
+	gems_sec_gemstone -> Hide();
 	switcher -> Layout();
 	evt.Skip();
 }

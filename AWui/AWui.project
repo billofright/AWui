@@ -18,6 +18,12 @@
     <VirtualDirectory Name="Panels">
       <File Name="processMonitor.h"/>
       <File Name="processMonitor.cpp"/>
+      <File Name="gems_sec_gemstone.h"/>
+      <File Name="gems_sec_gemstone.cpp"/>
+      <File Name="gems_sec_manager.h"/>
+      <File Name="gems_sec_manager.cpp"/>
+      <File Name="gems_sec_test.h"/>
+      <File Name="gems_sec_test.cpp"/>
       <File Name="gems_sec_setup.h"/>
       <File Name="gems_sec_setup.cpp"/>
       <File Name="processStartPanel.h"/>
