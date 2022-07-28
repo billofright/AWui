@@ -22,5 +22,6 @@ public:
 	wxButton** equipment_alarm_buttons = nullptr;
 	integrated_button* equipment_msg_dialogue = nullptr;
 	
+	
 
 };
