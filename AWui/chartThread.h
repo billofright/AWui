@@ -2,7 +2,6 @@
 #include "GLOBAL_CONSTANTS.h"
 #include <vector>
 
-
 class chartThread : public wxThread
 {
 public:
@@ -11,8 +10,6 @@ public:
 		m_frm = frm;
 	}
 	virtual ExitCode Entry();
-	
-	std::vector<double> values;
 	
 private:
 	wxPanel *m_frm;

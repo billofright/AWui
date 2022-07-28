@@ -58,11 +58,11 @@ cMenu::cMenu():wxFrame(nullptr, wxID_ANY, "Menu", wxDefaultPosition, wxSize(SCRE
 	switcher -> Add(pp_p, 1, wxGROW);
 
 	pStart = new processStartPanel(this);
-	pStart -> Show();
+	pStart -> Hide();
 	switcher -> Add(pStart, 1, wxGROW);
 	
 	pM = new processMonitor(this);
-	pM -> Hide();
+	pM -> Show();
 	switcher -> Add(pM, 1, wxGROW);
   
 	diag = new diagnosticsPanel(this);
