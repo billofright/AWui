@@ -19,7 +19,7 @@ public:
 	void OnGuiThreadEvent(wxThreadEvent &event);
 	void OnPaintProgress(wxPaintEvent& event);
 	
-	void CreateAndStart();
+	//void CreateAndStart();
 	wxButton* start = nullptr;
 	wxButton* processMonitor = nullptr;
 	

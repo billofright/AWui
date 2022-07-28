@@ -1,24 +1,17 @@
 #include "GUIThread.h"
 #include <iostream>
-#include <fstream>
+#include <wx/wfstream.h>
 
 using namespace std;
 
 wxThread::ExitCode GUIThread::Entry()
 {
 	
-	ifstream data;
-	data.open("data.csv");
-
 	for (int i=0; i<1000 && !TestDestroy(); i++){
 		wxMutexGuiEnter();
 		{
 //			wxCriticalSectionLocker lock(m_frm -> m_csBmp);
-						
-			string line;
-			getline(data, line, ',');
-			cout << line << "+" << endl;
-		
+									
 			wxMilliSleep(10);
 		}
 		wxMutexGuiLeave();
